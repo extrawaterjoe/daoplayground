@@ -1,10 +1,15 @@
-import React from 'react'
+import React from "react"
+import UserInfo from "./UserInfo"
+import UserFeed from "./UserFeed"
+import UserDaos from "./UserDaos"
 
-const UserDashboard = ({data}) => {
+const UserDashboard = ({ data }) => {
   return (
-    <pre>
-      {JSON.stringify(data, null, 2)}
-    </pre>
+    <div className="flex md:flex-row flex-col w-full">
+      <UserInfo />
+      <UserFeed />
+      <UserDaos data={data} />
+    </div>
   )
 }
 
