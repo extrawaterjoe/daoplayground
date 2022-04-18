@@ -1,10 +1,10 @@
 import React from "react"
-import Nav from "./Nav"
+import NavBar from "./NavBar"
 
 export const Layout = ({ children }) => {
   return (
     <div>
-      <Nav />
+      <NavBar />
       {children}
     </div>
   )
