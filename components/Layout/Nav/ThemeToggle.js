@@ -29,6 +29,8 @@ const ThemeToggle = () => {
   if (theme === "dark") {
     return darkTheme
   }
+
+  return null
 }
 
 export default ThemeToggle
