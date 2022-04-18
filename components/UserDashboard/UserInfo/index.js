@@ -1,9 +1,12 @@
 import React from "react"
+import Pfp from "./Pfp"
+import AddressENS from "./AddressENS"
 
 const UserInfo = () => {
   return (
-    <div className="flex w-full md:w-1/5 p-3 items-center justify-center">
-      <div className="rounded-full h-36 w-36 border"></div>
+    <div className="flex w-full flex-col md:w-1/5 p-3">
+      <Pfp />
+      <AddressENS />
     </div>
   )
 }
