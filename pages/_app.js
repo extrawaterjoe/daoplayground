@@ -1,6 +1,10 @@
 import "../styles/globals.css"
+import React from 'react'
 import { Layout } from "../components/Layout"
 import { ThemeProvider } from "next-themes"
+
+import { Hydrate, QueryClient, QueryClientProvider } from "react-query"
+import { ReactQueryDevtools } from "react-query/devtools"
 
 import { Provider, chain, defaultChains } from "wagmi"
 import { InjectedConnector } from "wagmi/connectors/injected"
@@ -8,6 +12,8 @@ import { WalletConnectConnector } from "wagmi/connectors/walletConnect"
 import { WalletLinkConnector } from "wagmi/connectors/walletLink"
 
 function MyApp({ Component, pageProps }) {
+  const [queryClient] = React.useState(() => new QueryClient())
+
   // API key for Ethereum node
   const AlchemyId = process.env.ALCHEMYKEY
   // Chains for connectors to support
@@ -35,9 +41,11 @@ function MyApp({ Component, pageProps }) {
   return (
     <ThemeProvider attribute="class">
       <Provider autoConnect connectors={connectors}>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
+        <QueryClientProvider client={queryClient}>
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </QueryClientProvider>
       </Provider>
     </ThemeProvider>
   )

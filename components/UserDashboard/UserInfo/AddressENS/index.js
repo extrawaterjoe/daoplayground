@@ -1,14 +1,18 @@
 import React from "react"
-import { useAccount, useEnsLookup } from "wagmi"
+import { useEnsLookup } from "wagmi"
 
-const AddressENS = () => {
-  const [{ data, error, loading }, disconnect] = useAccount()
+const AddressENS = ({ address }) => {
   const [{ data: ensData, error: ensError, loading: ensLoading }, lookupAddress] = useEnsLookup({
-    address: data?.address,
+    address: address,
   })
+
+  if (ensLoading || !address) {
+    return <div className="flex w-full justify-center animate-pulse">loading</div>
+  }
+
   return (
     <div className="flex w-full justify-center">
-      {ensData ? ensData : data?.address.substring(0, 6) + "..." + data?.address.substring(data?.address.length - 4)}
+      {ensData ? ensData : address.substring(0, 6) + "..." + address.substring(address.length - 4)}
     </div>
   )
 }

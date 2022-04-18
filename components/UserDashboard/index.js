@@ -3,10 +3,11 @@ import UserInfo from "./UserInfo"
 import UserFeed from "./UserFeed"
 import UserDaos from "./UserDaos"
 
-const UserDashboard = ({ data }) => {
+const UserDashboard = ({ address, data }) => {
+  
   return (
     <div className="flex md:flex-row flex-col w-full">
-      <UserInfo />
+      <UserInfo address={address}/>
       <UserFeed />
       <UserDaos data={data} />
     </div>
