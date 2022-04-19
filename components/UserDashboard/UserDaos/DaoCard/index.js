@@ -5,6 +5,7 @@ import DaoMembers from "./DaoMembers"
 
 import ExpandDao from "./ExpandDao"
 import DaoCardExpanded from "./DaoCardExpanded"
+import { useUserStore } from "/stores/useUserStore"
 
 import * as api from "/query"
 import { useQuery } from "react-query"
@@ -19,21 +20,29 @@ const DaoCard = ({ user, safe }) => {
   // check if user is in daoMembersData
   const isMember = daoMembersData?.includes(user)
 
+  const daoExpanded = useUserStore(state => state.daoExpanded)
+
   return (
     <div className="flex flex-col dark:bg-slate-800 bg-slate-200 rounded-xl p-3">
+      {/* Pfp and Members Section */}
       <div className="flex w-full flex-col lg:flex-row">
         <UtilIcon isMember={isMember} />
         <div className="rounded-full h-32 w-32 border border-white"></div>
+        {/* TODO: loading and error states */}
         <DaoMembers owners={daoMembersData} />
       </div>
+
+      {/* Dao Balance + Expand Dao Section */}
       <div className="flex flex-row justify-between items-end">
         <div className="flex flex-col w-">
           <div className="text-xl">{safe?.substring(0, 6) + "..." + safe.substring(safe.length - 4)}</div>
           <DaoBalance safe={safe} />
         </div>
-          <ExpandDao />
+        <ExpandDao safe={safe}/>
       </div>
-      {/* <DaoCardExpanded safe={safe} /> */}
+
+      {/* Dao Card Expanded */}
+      {daoExpanded ? <DaoCardExpanded safe={safe} /> : null}
     </div>
   )
 }
