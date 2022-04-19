@@ -7,7 +7,7 @@ const ExpandDao = ({ safe }) => {
   const setExpandedDao = useUserStore(state => state.setExpandedDao)
 
   const handleClick = () => {
-    if(daoExpanded) {
+    if (daoExpanded) {
       setDaoExpanded(false)
       setExpandedDao(null)
     } else {

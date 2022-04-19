@@ -26,7 +26,7 @@ const UserDaos = ({ user, data }) => {
   }, [reset, router.events])
 
   
-  if (!userSafes.length) {
+  if (!userSafes?.length) {
     return (
       <div className="flex w-full flex-col p-3 lg:w-2/5">
         <div className="text-3xl">daos</div>
