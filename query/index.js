@@ -12,7 +12,14 @@ export const daoMembers = async safeAddress => {
   return data.owners
 }
 
+export const daoCollectibles = async safeAddress => {
+  const { data } = await api.get(`safes/${safeAddress}/collectibles/?trusted=false&exclude_spam=false`)
+  return data
+}
+
 export const allDaoTx = async safeAddress => {
   const { data } = await api.get(`safes/${safeAddress}/all-transactions/?executed=false&queued=true&trusted=true`)
   return data
 }
+
+

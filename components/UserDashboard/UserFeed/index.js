@@ -15,11 +15,11 @@ const UserFeed = ({ data }) => {
     ))
   }, [data])
 
-  const [dao, setDao] = React.useState("")
+  const [dao, setDao] = React.useState()
   const router = useRouter()
 
   const reset = React.useCallback(() => {
-    setDao("false")
+    setDao()
   }, [setDao])
 
   React.useEffect(() => {
@@ -28,7 +28,7 @@ const UserFeed = ({ data }) => {
   }, [reset, router.events])
 
   const { data: txs, status } = useQuery(["txs", dao], () => api.allDaoTx(dao), {
-    enabled: dao !== "",
+    enabled: !!dao,
     staleTime: 190000,
   })
 

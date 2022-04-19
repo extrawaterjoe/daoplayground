@@ -13,6 +13,7 @@ const UtilIcon = ({ isMember }) => {
           <Image src="/icons/uniswap-uni-logo.svg" alt="add" width={18} height={18} />
         ) : (
           <IoMdAddCircleOutline />
+          // <div className="text-xs p-1">💙</div>
         )}
       </button>
     </div>

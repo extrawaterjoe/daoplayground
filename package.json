@@ -17,7 +17,8 @@
     "react-dom": "18.0.0",
     "react-icons": "^4.3.1",
     "react-query": "^3.35.0",
-    "wagmi": "^0.2.26"
+    "wagmi": "^0.2.26",
+    "zustand": "^4.0.0-rc.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.4",
