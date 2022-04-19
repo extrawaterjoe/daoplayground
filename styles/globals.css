@@ -79,4 +79,14 @@
   .menu-link {
     @apply flex flex-row justify-between rounded px-1 py-2 text-sm text-slate-800 hover:bg-slate-100 hover:shadow-sm dark:text-white dark:hover:bg-slate-800;
   }
+
+  /* Chrome, Safari and Opera */
+  /* NO SCROLL BAR FOR IN PAGE COMPONENTS */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
 }
