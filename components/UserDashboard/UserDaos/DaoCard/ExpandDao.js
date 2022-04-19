@@ -16,13 +16,12 @@ const ExpandDao = ({ safe }) => {
     }
   }
 
-
   return (
     <button
       className="dark:bg-slate-700 bg-slate-100 rounded-full h-fit w-fit p-1 text-xs border border-white hover:border-teal-300 dark:hover:bg-slate-600"
       onClick={handleClick}
     >
-      expand
+      {daoExpanded ? "collapse" : "expand"}
     </button>
   )
 }

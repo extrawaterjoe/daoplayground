@@ -4,7 +4,9 @@ import DaoBalance from "./DaoBalance"
 import DaoMembers from "./DaoMembers"
 
 import ExpandDao from "./ExpandDao"
-import DaoCardExpanded from "./DaoCardExpanded"
+import dynamic from 'next/dynamic'
+const DaoCardExpanded = dynamic(() => import('./DaoCardExpanded'))
+
 import { useUserStore } from "/stores/useUserStore"
 
 import * as api from "/query"
