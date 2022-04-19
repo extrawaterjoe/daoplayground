@@ -44,7 +44,7 @@ const DaoCard = ({ user, safe }) => {
       </div>
 
       {/* Dao Card Expanded */}
-      {daoExpanded ? <DaoCardExpanded safe={safe} /> : null}
+      {daoExpanded ? <DaoCardExpanded isMember={isMember} safe={safe} /> : null}
     </div>
   )
 }

@@ -1,5 +1,4 @@
 import React from "react"
-import Router from "next/router"
 import { useRouter } from "next/router"
 import FeedCard from "./FeedCard"
 
@@ -61,7 +60,7 @@ const UserFeed = ({ data }) => {
   return (
     <div className="flex w-full flex-col p-3 lg:w-2/5 space-y-3">
       <div className="text-3xl">feed</div>
-      <div className="flex flex-row space-x-2 overflow-x-auto no-scrollbar">{!expandedDao ? daos : expandedDaoBadge}</div>
+      {!expandedDao ? <div className="flex flex-row space-x-2 overflow-x-auto no-scrollbar">{daos}</div> : null}
       {daoTxs}
     </div>
   )

@@ -14,8 +14,8 @@ const UserDashboard = ({ address, data }) => {
   return (
     <div className="flex lg:flex-row flex-col w-full">
       <UserInfo address={address}/>
-      <UserFeed data={data}/>
       <UserDaos user={userData?.address} data={data} />
+      <UserFeed data={data}/>
     </div>
   )
 }
