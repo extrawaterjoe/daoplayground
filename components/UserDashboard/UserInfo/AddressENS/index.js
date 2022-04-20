@@ -11,7 +11,7 @@ const AddressENS = ({ address }) => {
   }
 
   return (
-    <div className="flex w-full justify-center">
+    <div className="flex w-full justify-center text-lg">
       {ensData ? ensData : address.substring(0, 6) + "..." + address.substring(address.length - 4)}
     </div>
   )

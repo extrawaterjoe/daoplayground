@@ -1,11 +1,14 @@
 import React from "react"
 import Link from "next/link"
 
-import { useAccount } from "wagmi"
+import { useAccount, useEnsLookup } from "wagmi"
 import Router from "next/router"
 
 const DaoMemberBtn = ({ member }) => {
   const [{ data, error, loading }] = useAccount()
+  const [{ data: ensData, error: ensError, loading: ensLoading }, lookupAddress] = useEnsLookup({
+    address: member,
+  })
 
   return (
     <Link href={`${member}`}>
@@ -20,7 +23,7 @@ const DaoMemberBtn = ({ member }) => {
               : "border-slate-100 dark:border-slate-700 hover:border-white dark:hover:border-white")
           }
         >
-          {member.substring(0, 4) + "..." + member.substring(member.length - 4)}
+          {ensData ? ensData : member.substring(0, 4) + "..." + member.substring(member.length - 4)}
         </div>
       </a>
     </Link>

@@ -7,7 +7,7 @@ const DaoBalance = ({ safe }) => {
   })
 
   return (
-    <div className="flex flex-row space-x-2 text-2xl">
+    <div className="flex flex-row space-x-2 text-xl">
       <div>{data?.formatted}</div>
       <div>ETH</div>
     </div>

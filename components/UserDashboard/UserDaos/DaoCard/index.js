@@ -4,8 +4,7 @@ import DaoBalance from "./DaoBalance"
 import DaoMembers from "./DaoMembers"
 
 import ExpandDao from "./ExpandDao"
-import dynamic from 'next/dynamic'
-const DaoCardExpanded = dynamic(() => import('./DaoCardExpanded'))
+import DaoCardExpanded from './DaoCardExpanded/index';
 
 import { useUserStore } from "/stores/useUserStore"
 
@@ -37,7 +36,7 @@ const DaoCard = ({ user, safe }) => {
       {/* Dao Balance + Expand Dao Section */}
       <div className="flex flex-row justify-between items-end">
         <div className="flex flex-col w-">
-          <div className="text-xl">{safe?.substring(0, 6) + "..." + safe.substring(safe.length - 4)}</div>
+          <div className="text-2xl">{safe?.substring(0, 6) + "..." + safe.substring(safe.length - 4)}</div>
           <DaoBalance safe={safe} />
         </div>
         <ExpandDao safe={safe}/>
