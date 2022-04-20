@@ -23,6 +23,7 @@ const DaoMemberBtn = ({ member }) => {
               : "border-slate-100 dark:border-slate-700 hover:border-white dark:hover:border-white")
           }
         >
+          {/* {ensData ? ensData : member.substring(0, 4) + "..." + member.substring(member.length - 4)} */}
           {member.substring(0, 4) + "..." + member.substring(member.length - 4)}
         </div>
       </a>

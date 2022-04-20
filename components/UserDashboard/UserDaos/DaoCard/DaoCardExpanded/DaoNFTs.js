@@ -10,6 +10,14 @@ const DaoNFTs = ({ safe }) => {
     isLoading: daoNFTsLoading,
   } = useQuery(["daoNFTs", safe], () => api.daoNFTs(safe), { staleTime: 180000 })
 
+  if (!daoNFTsData?.length) {
+    return (
+      <div className="flex flex-col w-full items-center justify-center h-20">
+        <div className="text-xl">No NFTs...yet</div>
+      </div>
+    )
+  }
+
   return (
     <div className="flex flex-col">
       <div className="text-2xl">nfts</div>

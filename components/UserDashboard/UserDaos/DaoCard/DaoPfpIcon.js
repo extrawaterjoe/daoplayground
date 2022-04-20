@@ -2,9 +2,11 @@ import React from "react"
 import Image from "next/image"
 import { IoMdAddCircleOutline } from "react-icons/io"
 
-const UtilIcon = ({ isMember }) => {
+const DaoPfpIcon = ({ isMember }) => {
   // follow button if not following
   // uniswap button if user is an owner of the dao
+
+  // maybe instead this could serve as an emoji status indicator, or a link to dao page
 
   return (
     <div className="absolute space-y-1">
@@ -20,4 +22,4 @@ const UtilIcon = ({ isMember }) => {
   )
 }
 
-export default UtilIcon
+export default DaoPfpIcon

@@ -1,8 +1,10 @@
 import React from "react"
-import UtilIcon from "./UtilIcon"
+import DaoUtilityBar from "./DaoUtilityBar"
+import DaoPfpIcon from "./DaoPfpIcon"
+import DaoPfp from "./DaoPfp"
 import DaoBalance from "./DaoBalance"
 import DaoMembers from "./DaoMembers"
-
+import DaoName from "./DaoName"
 import ExpandDao from "./ExpandDao"
 import DaoCardExpanded from './DaoCardExpanded/index';
 
@@ -25,10 +27,11 @@ const DaoCard = ({ user, safe }) => {
 
   return (
     <div className="flex flex-col dark:bg-slate-800 bg-slate-200 rounded-xl p-3">
+      <DaoUtilityBar />
       {/* Pfp and Members Section */}
       <div className="flex w-full flex-col lg:flex-row">
-        <UtilIcon isMember={isMember} />
-        <div className="rounded-full h-32 w-32 border border-white"></div>
+        <DaoPfpIcon isMember={isMember} />
+        <DaoPfp />
         {/* TODO: loading and error states */}
         <DaoMembers owners={daoMembersData} />
       </div>
@@ -36,7 +39,7 @@ const DaoCard = ({ user, safe }) => {
       {/* Dao Balance + Expand Dao Section */}
       <div className="flex flex-row justify-between items-end">
         <div className="flex flex-col w-">
-          <div className="text-2xl">{safe?.substring(0, 6) + "..." + safe.substring(safe.length - 4)}</div>
+          <DaoName isMember={isMember} safe={safe} />
           <DaoBalance safe={safe} />
         </div>
         <ExpandDao safe={safe}/>
