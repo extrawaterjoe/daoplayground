@@ -10,7 +10,7 @@ import DaoCardExpanded from "./DaoCardExpanded/index"
 
 import { usePlaygroundStore } from "/stores/usePlaygroundStore"
 
-import * as api from "/query"
+import * as api from "/query/gnosisQuery"
 import { useQuery } from "react-query"
 
 const DaoCard = ({ user, safe }) => {

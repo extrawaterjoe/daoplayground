@@ -1,6 +1,6 @@
 import React from "react"
 import { FaEthereum } from "react-icons/fa"
-import * as api from "/query"
+import * as api from "/query/gnosisQuery"
 import { useQuery } from "react-query"
 
 const DaoTokens = ({ safe }) => {

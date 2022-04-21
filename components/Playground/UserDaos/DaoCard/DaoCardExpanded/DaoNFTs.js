@@ -1,5 +1,5 @@
 import React from "react"
-import * as api from "/query"
+import * as api from "/query/gnosisQuery"
 import { useQuery } from "react-query"
 
 const DaoNFTs = ({ safe }) => {

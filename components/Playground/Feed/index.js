@@ -2,7 +2,7 @@ import React from "react"
 import { useRouter } from "next/router"
 import TxCard from "./TxCard"
 import { usePlaygroundStore } from "/stores/usePlaygroundStore"
-import * as api from "/query"
+import * as api from "/query/gnosisQuery"
 import { useQuery } from "react-query"
 
 // this is currently only set up to display a dao's txs when the dao is expanded
