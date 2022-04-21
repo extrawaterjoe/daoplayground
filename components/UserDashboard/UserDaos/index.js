@@ -28,8 +28,8 @@ const UserDaos = ({ user, data }) => {
   
   if (!userSafes?.length) {
     return (
-      <div className="flex w-full flex-col p-3 lg:w-2/5">
-        <div className="text-3xl">daos</div>
+      <div className="flex w-full flex-col lg:w-2/5">
+        <div className="text-3xl h-10 px-3">daos</div>
         <div className="text-xl">No daos found</div>
       </div>
     )
@@ -38,8 +38,8 @@ const UserDaos = ({ user, data }) => {
   // if expandedDao is set, show expanded dao and remove other daos from view
   if (expandedDao) {
     return (
-      <div className="flex w-full flex-col p-3 lg:w-2/5 space-y-3">
-        <div className="text-3xl">{expandedDao?.substring(0, 6) + "..." + expandedDao.substring(expandedDao.length - 4)}</div>
+      <div className="flex w-full flex-col lg:w-2/5 space-y-6">
+        <div className="text-3xl h-10 px-3">{expandedDao?.substring(0, 6) + "..." + expandedDao.substring(expandedDao.length - 4)}</div>
         <DaoCard user={user} safe={expandedDao} />
       </div>
     )
@@ -49,8 +49,8 @@ const UserDaos = ({ user, data }) => {
   // might want to paginate this (infinite scroll)
   if (userSafes.length && !expandedDao) {
     return (
-      <div className="flex w-full flex-col p-3 lg:w-2/5 space-y-6">
-        <div className="text-3xl">daos</div>
+      <div className="flex w-full flex-col lg:w-2/5 space-y-6">
+        <div className="text-3xl h-10 px-3">daos</div>
         {userSafes.map((safe, index) => (
           <DaoCard key={index} user={user} safe={safe} />
         ))}

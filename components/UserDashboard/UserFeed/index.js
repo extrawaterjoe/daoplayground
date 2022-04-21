@@ -1,6 +1,6 @@
 import React from "react"
 import { useRouter } from "next/router"
-import FeedCard from "./FeedCard"
+import TxCard from "./TxCard"
 
 import { useUserStore } from "/stores/useUserStore"
 
@@ -55,25 +55,30 @@ const UserFeed = ({ data }) => {
     staleTime: 190000,
   })
 
-  const daoTxs = txs?.results?.map((tx, i) => <FeedCard tx={tx} key={i} />)
+  const daoTxs = txs?.results?.map((tx, i) => <TxCard tx={tx} key={i} />)
 
   return (
-    <div className="flex w-full flex-col p-3 lg:w-2/5 space-y-3">
+    <div className="flex w-full flex-col lg:w-2/5 space-y-6">
       {/* <div className="text-3xl">feed</div> */}
       {/* {!expandedDao ? <div className="flex flex-row space-x-2 overflow-x-auto no-scrollbar">{daos}</div> : null} */}
-      <div className="top-20 flex flex-row space-x-2 overflow-x-auto no-scrollbar dark:bg-slate-900 bg-slate-200">
-        <div className="space-x-3 dark:bg-slate-800 bg-slate-100 border border-slate-100 dark:border-slate-800 hover:dark:border-white hover:border-white hover:dark:bg-slate-700 hover:bg-slate-200 rounded-xl p-1">
-        <span>🔥</span><span>hot</span>
+      <div className="h-10 flex flex-row space-x-2 overflow-x-auto no-scrollbar dark:bg-slate-900 bg-slate-300 px-3">
+        <div className="space-x-3 dark:bg-slate-800 bg-slate-100 border border-slate-100 dark:border-slate-800 hover:dark:border-white hover:border-white hover:dark:bg-slate-700 hover:bg-slate-200 rounded-xl p-1 my-1">
+          <span>🔥</span>
+          <span>hot</span>
         </div>
-        <div className="space-x-3 dark:bg-slate-800 bg-slate-100 border border-slate-100 dark:border-slate-800 hover:dark:border-white hover:border-white hover:dark:bg-slate-700 hover:bg-slate-200 rounded-xl p-1">
-        <span>💙</span><span>following</span>
+        <div className="space-x-3 dark:bg-slate-800 bg-slate-100 border border-slate-100 dark:border-slate-800 hover:dark:border-white hover:border-white hover:dark:bg-slate-700 hover:bg-slate-200 rounded-xl p-1 my-1">
+          <span>💙</span>
+          <span>following</span>
         </div>
-        <div className="space-x-3 dark:bg-slate-800 bg-slate-100 border border-slate-100 dark:border-slate-800 hover:dark:border-white hover:border-white hover:dark:bg-slate-700 hover:bg-slate-200 rounded-xl p-1">
-        <span>⭐</span><span>favorites</span>
+        <div className="space-x-3 dark:bg-slate-800 bg-slate-100 border border-slate-100 dark:border-slate-800 hover:dark:border-white hover:border-white hover:dark:bg-slate-700 hover:bg-slate-200 rounded-xl p-1 my-1">
+          <span>⭐</span>
+          <span>favorites</span>
         </div>
       </div>
       {/* could be daoTxs or feed items  */}
+      <div className="flex space-y-3 flex-col px-3">
       {daoTxs}
+      </div>
     </div>
   )
 }

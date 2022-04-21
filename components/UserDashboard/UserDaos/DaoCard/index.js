@@ -26,7 +26,7 @@ const DaoCard = ({ user, safe }) => {
   const daoExpanded = useUserStore(state => state.daoExpanded)
 
   return (
-    <div className="flex flex-col dark:bg-slate-800 bg-slate-200 rounded-xl p-3">
+    <div className="flex flex-col dark:bg-slate-800 bg-slate-200 rounded-xl p-3 m-3">
       <DaoUtilityBar />
       {/* Pfp and Members Section */}
       <div className="flex w-full flex-col lg:flex-row">

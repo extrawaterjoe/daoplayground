@@ -5,6 +5,7 @@
 @layer base {
   html {
     /* @apply mx-3 md:mx-1; */
+    @apply overflow-y-scroll;
   }
 
   body {
@@ -28,19 +29,18 @@
   /* Track */
   ::-webkit-scrollbar-track {
     @apply shadow;
-    @apply bg-slate-200 dark:bg-slate-700;
-    @apply rounded;
+    @apply bg-slate-300 dark:bg-slate-900;
   }
 
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    @apply bg-slate-300 dark:bg-slate-800;
+    @apply bg-slate-200 dark:bg-slate-800;
     @apply rounded-xl;
   }
 
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
-    @apply bg-slate-400;
+    @apply bg-slate-700;
   }
 }
 

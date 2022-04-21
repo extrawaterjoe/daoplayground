@@ -1,6 +1,7 @@
 import React from "react"
 import Image from "next/image"
 import { IoMdAddCircleOutline } from "react-icons/io"
+import { HiExternalLink } from "react-icons/hi"
 
 const DaoPfpIcon = ({ isMember }) => {
   // follow button if not following
@@ -14,7 +15,8 @@ const DaoPfpIcon = ({ isMember }) => {
         {isMember ? (
           <Image src="/icons/uniswap-uni-logo.svg" alt="add" width={18} height={18} />
         ) : (
-          <IoMdAddCircleOutline />
+          // <IoMdAddCircleOutline />
+          <HiExternalLink />
           // <div className="text-xs p-1">💙</div>
         )}
       </button>

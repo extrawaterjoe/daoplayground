@@ -20,7 +20,7 @@ const DaoNFTs = ({ safe }) => {
 
   return (
     <div className="flex flex-col">
-      <div className="text-2xl">nfts</div>
+      <div className="text-xl">nfts</div>
       <div className="grid grid-cols-2 gap-2">
         {daoNFTsData?.map((nft, i) => (
           <div key={i} className="p-2">
