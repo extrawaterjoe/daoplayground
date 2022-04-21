@@ -2,10 +2,15 @@ import React from "react"
 import Link from "next/link"
 import dayjs from "dayjs"
 
+// currently renders only one uniform tx card
+// break up into multi_sig, eth_tx, etc. 
+// style uniquely to differentiate them from each other
+// will give users a good sense of how active a dao is and the types of txs that are occurring
+// i think TxCards should be expandable in some way
+// multi_sig txs in particular, an expanded view would be useful to display more info / actions on that tx
 const TxCard = ({ tx }) => {
   console.log("TxCard tx:", tx)
 
-  // timestamp that prints out diff from current time
   const diffTimeStamp = () => {
     const date = dayjs(tx?.executionDate || tx?.submissionDate)
     const now = dayjs()

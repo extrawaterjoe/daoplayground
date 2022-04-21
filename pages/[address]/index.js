@@ -1,12 +1,12 @@
 import axios from "axios"
 import React from "react"
-import UserDashboard from "/components/UserDashboard"
+import Playground from "/components/Playground"
 
-const UserPage = ({ address, data }) => {
-  return <UserDashboard address={address} data={data} />
+const index = ({ address, data }) => {
+  return <Playground address={address} data={data} />
 }
 
-export default UserPage
+export default index
 
 export const getServerSideProps = async ({ query }) => {
   const address = query.address

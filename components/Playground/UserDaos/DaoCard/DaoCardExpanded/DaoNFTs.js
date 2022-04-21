@@ -1,5 +1,4 @@
 import React from "react"
-
 import * as api from "/query"
 import { useQuery } from "react-query"
 
@@ -8,7 +7,7 @@ const DaoNFTs = ({ safe }) => {
     data: daoNFTsData,
     error: daoNFTsErr,
     isLoading: daoNFTsLoading,
-  } = useQuery(["daoNFTs", safe], () => api.daoNFTs(safe), { staleTime: 180000 })
+  } = useQuery(["daoNFTs", safe], () => api.daoNFTs(safe), { staleTime: 200000, refetchOnWindowFocus: false })
 
   if (!daoNFTsData?.length) {
     return (

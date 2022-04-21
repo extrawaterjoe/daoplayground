@@ -1,10 +1,10 @@
 import React from "react"
-import { useUserStore } from "/stores/useUserStore"
+import { usePlaygroundStore } from "/stores/usePlaygroundStore"
 
 const ExpandDao = ({ safe }) => {
-  const daoExpanded = useUserStore(state => state.daoExpanded)
-  const setDaoExpanded = useUserStore(state => state.setDaoExpanded)
-  const setExpandedDao = useUserStore(state => state.setExpandedDao)
+  const daoExpanded = usePlaygroundStore(state => state.daoExpanded)
+  const setDaoExpanded = usePlaygroundStore(state => state.setDaoExpanded)
+  const setExpandedDao = usePlaygroundStore(state => state.setExpandedDao)
 
   const handleClick = () => {
     if (daoExpanded) {

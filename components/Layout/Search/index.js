@@ -1,6 +1,7 @@
 import React from "react"
 import axios from "axios"
 import { GoSearch } from "react-icons/go"
+import { MdClose } from "react-icons/md"
 import { useLayoutStore } from '/stores/useLayoutStore';
 
 const reducer = (state, action) => {
@@ -66,23 +67,23 @@ const Search = () => {
 
   return (
     <div className="flex flex-row w-full justify-center px-3">
-    <div className="relative md:w-1/2 w-full border-b-2 border-slate-300 py-3 text-slate-600 focus-within:text-slate-400 dark:focus-within:text-slate-100">
+    <div className="relative md:w-1/2 w-full border-b-2 border-slate-200 py-3 text-slate-600 focus-within:text-slate-400 dark:focus-within:text-slate-100">
       <span className="absolute left-0 top-4 flex items-center pl-2">
         <GoSearch size={24} />
       </span>
       <input
         autoFocus
-        className="w-full bg-slate-200 py-2 pl-12 text-sm text-white focus:text-slate-900 focus:outline-none dark:bg-slate-900 dark:focus:text-slate-100"
+        className="w-full bg-slate-300 py-2 pl-12 text-sm text-white focus:text-slate-900 focus:outline-none dark:bg-slate-900 dark:focus:text-slate-100"
         placeholder="Search..."
         autoComplete="off"
         onChange={event => setQuery(event.target.value)}
         value={query}
       />
       <button
-        className="absolute right-2 top-3 rounded-lg border px-2 py-1 dark:text-white"
+        className="absolute right-2 top-3 rounded-full border p-1 hover:dark:bg-slate-800 hover:bg-slate-100 dark:text-white"
         onClick={setSearchOpen}
       >
-        esc
+        <MdClose size={24} />
       </button>
     </div>
     {/* RESULTS */}

@@ -6,9 +6,9 @@ import DaoBalance from "./DaoBalance"
 import DaoMembers from "./DaoMembers"
 import DaoName from "./DaoName"
 import ExpandDao from "./ExpandDao"
-import DaoCardExpanded from './DaoCardExpanded/index';
+import DaoCardExpanded from "./DaoCardExpanded/index"
 
-import { useUserStore } from "/stores/useUserStore"
+import { usePlaygroundStore } from "/stores/usePlaygroundStore"
 
 import * as api from "/query"
 import { useQuery } from "react-query"
@@ -18,12 +18,12 @@ const DaoCard = ({ user, safe }) => {
     data: daoMembersData,
     error: daoMembersErr,
     isLoading: daoMembersLoading,
-  } = useQuery(["daoMembers", safe], () => api.daoMembers(safe), { staleTime: 180000 })
+  } = useQuery(["daoMembers", safe], () => api.daoMembers(safe), { staleTime: 200000, refetchOnWindowFocus: false })
 
   // check if user is in daoMembersData
   const isMember = daoMembersData?.includes(user)
 
-  const daoExpanded = useUserStore(state => state.daoExpanded)
+  const daoExpanded = usePlaygroundStore(state => state.daoExpanded)
 
   return (
     <div className="flex flex-col dark:bg-slate-800 bg-slate-200 rounded-xl p-3 m-3">
@@ -42,7 +42,7 @@ const DaoCard = ({ user, safe }) => {
           <DaoName isMember={isMember} safe={safe} />
           <DaoBalance safe={safe} />
         </div>
-        <ExpandDao safe={safe}/>
+        <ExpandDao safe={safe} />
       </div>
 
       {/* Dao Card Expanded */}

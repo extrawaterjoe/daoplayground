@@ -1,6 +1,5 @@
 import React from "react"
 import { FaEthereum } from "react-icons/fa"
-
 import * as api from "/query"
 import { useQuery } from "react-query"
 
@@ -9,7 +8,7 @@ const DaoTokens = ({ safe }) => {
     data: daoTokensData,
     error: daoTokensErr,
     isLoading: daoTokensLoading,
-  } = useQuery(["daoTokens", safe], () => api.daoBalance(safe), { staleTime: 180000 })
+  } = useQuery(["daoTokens", safe], () => api.daoBalance(safe), { staleTime: 200000, refetchOnWindowFocus: false })
 
   return (
     <div className="flex flex-col">

@@ -2,12 +2,11 @@ import React from "react"
 import DaoCardNav from "./DaoCardNav"
 import DaoTokens from "./DaoTokens"
 import DaoNFTs from "./DaoNFTs"
-
-import { useUserStore } from '/stores/useUserStore';
+import { usePlaygroundStore } from '/stores/usePlaygroundStore';
 
 const DaoCardExpanded = ({ isMember, safe }) => {
 
-  const expandedPanel = useUserStore(state => state.expandedPanel)
+  const expandedPanel = usePlaygroundStore(state => state.expandedPanel)
 
   const panel = React.useMemo(() => {
     if (expandedPanel === "tokens") {

@@ -1,6 +1,5 @@
 import React from "react"
 import Link from "next/link"
-
 import { useAccount, useEnsLookup } from "wagmi"
 import Router from "next/router"
 

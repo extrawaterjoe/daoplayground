@@ -1,9 +1,9 @@
 import React from "react"
-import { useUserStore } from "/stores/useUserStore"
+import { usePlaygroundStore } from "/stores/usePlaygroundStore"
 
 const DaoCardNav = () => {
-  const expandedPanel = useUserStore(state => state.expandedPanel)
-  const setExpandedPanel = useUserStore(state => state.setExpandedPanel)
+  const expandedPanel = usePlaygroundStore(state => state.expandedPanel)
+  const setExpandedPanel = usePlaygroundStore(state => state.setExpandedPanel)
 
   const handleSetPanel = React.useCallback((panel) => {
     if (panel === expandedPanel) {

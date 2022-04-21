@@ -1,6 +1,6 @@
 import create from "zustand"
 
-export const useUserStore = create(set => ({
+export const usePlaygroundStore = create(set => ({
   daoExpanded: false,
   setDaoExpanded: () => set(state => ({ daoExpanded: !state.daoExpanded })),
 

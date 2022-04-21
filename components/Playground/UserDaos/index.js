@@ -1,15 +1,15 @@
 import React from "react"
 import DaoCard from "./DaoCard"
-
 import { useRouter } from "next/router"
+import { usePlaygroundStore } from "/stores/usePlaygroundStore"
 
-import { useUserStore } from '/stores/useUserStore';
-
+// this is currently only set up to display expandable dao cards
+// TODO: determine all possible views UserDaos state
 const UserDaos = ({ user, data }) => {
   const userSafes = data?.safes
-  const expandedDao = useUserStore(state => state.expandedDao)
-  const setExpanedDao = useUserStore(state => state.setExpandedDao)
-  const setDaoExpanded = useUserStore(state => state.setDaoExpanded)
+  const expandedDao = usePlaygroundStore(state => state.expandedDao)
+  const setExpanedDao = usePlaygroundStore(state => state.setExpandedDao)
+  const setDaoExpanded = usePlaygroundStore(state => state.setDaoExpanded)
 
   const router = useRouter()
 
@@ -25,7 +25,6 @@ const UserDaos = ({ user, data }) => {
     return () => router.events.off("routeChangeStart", reset)
   }, [reset, router.events])
 
-  
   if (!userSafes?.length) {
     return (
       <div className="flex w-full flex-col lg:w-2/5">
@@ -34,12 +33,14 @@ const UserDaos = ({ user, data }) => {
       </div>
     )
   }
-  
+
   // if expandedDao is set, show expanded dao and remove other daos from view
   if (expandedDao) {
     return (
       <div className="flex w-full flex-col lg:w-2/5 space-y-6">
-        <div className="text-3xl h-10 px-3">{expandedDao?.substring(0, 6) + "..." + expandedDao.substring(expandedDao.length - 4)}</div>
+        <div className="text-3xl h-10 px-3">
+          {expandedDao?.substring(0, 6) + "..." + expandedDao.substring(expandedDao.length - 4)}
+        </div>
         <DaoCard user={user} safe={expandedDao} />
       </div>
     )
