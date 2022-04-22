@@ -10,7 +10,7 @@ const AccountDisplay = () => {
 
   if (data?.address && !loading) {
     return (
-      <Link href={`/user/${data?.address}`}>
+      <Link href={`/${data?.address}`}>
         <a>
           <div className="relative p-2 rounded-full border bg-slate-200 hover:bg-slate-100 dark:bg-slate-900 dark:hover:bg-slate-800">
             {ensData

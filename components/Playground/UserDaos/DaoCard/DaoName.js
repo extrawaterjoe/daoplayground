@@ -1,6 +1,10 @@
 import React from "react"
 import { HiPencilAlt } from "react-icons/hi"
 
+// looking into contenteditable for this
+// the idea would be that when the edit button is clicked,
+// the address becomes editable and the edit button is replaced with a save button
+// when the save button is clicked, the name is sent to our backent and the save button is toggled back to an edit button
 const DaoName = ({ safe, isMember }) => {
   return (
     <div className="flex flex-row items-center space-x-3">
