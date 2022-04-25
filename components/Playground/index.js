@@ -8,7 +8,8 @@ const Playground = ({ address, data }) => {
   // data is the res from querying gnosis for the user's daos
   // address is the address of the profile being viewed
   // data:userData is the data of the signed-in user
-  const [{ data: userData, error: userErr, loading: userLoading }, disconnect] = useAccount()
+  // const [{ data: userData, error: userErr, loading: userLoading }, disconnect] = useAccount()
+  const { data: userData, isError, isLoading } = useAccount()
 
   // i think there's an opportunity to toggle UserDaos out for another set of components
   // Feed and UserDaos(or a component that contains UserDaos / toggles it out) are intended

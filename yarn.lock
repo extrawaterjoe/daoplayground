@@ -172,6 +172,26 @@
     "@babel/helper-validator-identifier" "^7.16.7"
     to-fast-properties "^2.0.0"
 
+"@coinbase/wallet-sdk@^3.0.8":
+  version "3.0.8"
+  resolved "https://registry.yarnpkg.com/@coinbase/wallet-sdk/-/wallet-sdk-3.0.8.tgz#f551aedf6b75d5330049edc16525a8f22c00a34a"
+  integrity sha512-yqnId5BIPeDbHks/DzAeSIvk68r5wvhoTpVnGHSZGWOgRx3h7K8y124WYCD+ketbKCdwoeOd8CLgXdc3H6VRug==
+  dependencies:
+    "@metamask/safe-event-emitter" "2.0.0"
+    bind-decorator "^1.0.11"
+    bn.js "^5.1.1"
+    clsx "^1.1.0"
+    eth-block-tracker "4.4.3"
+    eth-json-rpc-filters "4.2.2"
+    eth-rpc-errors "4.0.2"
+    js-sha256 "0.9.0"
+    json-rpc-engine "6.1.0"
+    keccak "^3.0.1"
+    preact "^10.5.9"
+    qs "^6.10.3"
+    rxjs "^6.6.3"
+    stream-browserify "^3.0.0"
+
 "@eslint/eslintrc@^1.2.1":
   version "1.2.1"
   resolved "https://registry.npmjs.org/@eslint/eslintrc/-/eslintrc-1.2.1.tgz"
@@ -377,7 +397,7 @@
   dependencies:
     "@ethersproject/logger" "^5.6.0"
 
-"@ethersproject/providers@5.6.4", "@ethersproject/providers@^5.5.1":
+"@ethersproject/providers@5.6.4":
   version "5.6.4"
   resolved "https://registry.yarnpkg.com/@ethersproject/providers/-/providers-5.6.4.tgz#1a49c211b57b0b2703c320819abbbfa35c83dff7"
   integrity sha512-WAdknnaZ52hpHV3qPiJmKx401BLpup47h36Axxgre9zT+doa/4GC/Ne48ICPxTm0BqndpToHjpLP1ZnaxyE+vw==
@@ -710,6 +730,11 @@
   dependencies:
     "@types/node" "*"
 
+"@types/use-sync-external-store@^0.0.3":
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/@types/use-sync-external-store/-/use-sync-external-store-0.0.3.tgz#b6725d5f4af24ace33b36fafd295136e75509f43"
+  integrity sha512-EwmlvuaxPNej9+T4v5AuBPJa2x2UOJVdjCtDHgcDqitUeOtjnJKJ+apYjVcAoBEMjKW1VVFGZLUb5+qqa09XFA==
+
 "@typescript-eslint/parser@5.10.1":
   version "5.10.1"
   resolved "https://registry.npmjs.org/@typescript-eslint/parser/-/parser-5.10.1.tgz"
@@ -753,6 +778,14 @@
   dependencies:
     "@typescript-eslint/types" "5.10.1"
     eslint-visitor-keys "^3.0.0"
+
+"@wagmi/core@0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@wagmi/core/-/core-0.2.0.tgz#4c4aa118d48e901028b673ed84b691d69dd8add3"
+  integrity sha512-CbMeNR533K/SZunHEysExtwmJvpXXgE8B2aFec/ULJhwKcXEZfQExh87h7OXi2tSPwP5sYL/RM2o9zjJkSQCyA==
+  dependencies:
+    eventemitter3 "^4.0.7"
+    zustand "^4.0.0-rc.0"
 
 "@walletconnect/browser-utils@^1.7.7":
   version "1.7.7"
@@ -3182,6 +3215,13 @@ qrcode@1.4.4:
     pngjs "^3.3.0"
     yargs "^13.2.4"
 
+qs@^6.10.3:
+  version "6.10.3"
+  resolved "https://registry.yarnpkg.com/qs/-/qs-6.10.3.tgz#d6cde1b2ffca87b5aa57889816c5f81535e22e8e"
+  integrity sha512-wr7M2E0OFRfIfJZjKGieI8lBKb7fRCH4Fv5KNPEs7gJ8jadvotdsS08PzOKR7opXhZ/Xkjtt3WF9g38drmyRqQ==
+  dependencies:
+    side-channel "^1.0.4"
+
 query-string@6.13.5:
   version "6.13.5"
   resolved "https://registry.yarnpkg.com/query-string/-/query-string-6.13.5.tgz#99e95e2fb7021db90a6f373f990c0c814b3812d8"
@@ -3208,13 +3248,14 @@ randombytes@^2.1.0:
   dependencies:
     safe-buffer "^5.1.0"
 
-react-dom@18.0.0:
-  version "18.0.0"
-  resolved "https://registry.npmjs.org/react-dom/-/react-dom-18.0.0.tgz"
-  integrity sha512-XqX7uzmFo0pUceWFCt7Gff6IyIMzFUn7QMZrbrQfGxtaxXZIcGQzoNpRLE3fQLnS4XzLLPMZX2T9TRcSrasicw==
+react-dom@17.0.2:
+  version "17.0.2"
+  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-17.0.2.tgz#ecffb6845e3ad8dbfcdc498f0d0a939736502c23"
+  integrity sha512-s4h96KtLDUQlsENhMn1ar8t2bEa+q/YAtj8pPPdIjPDGBDIVNsrD9aXNWqspUe6AzKCIG0C1HZZLqLV7qpOBGA==
   dependencies:
     loose-envify "^1.1.0"
-    scheduler "^0.21.0"
+    object-assign "^4.1.1"
+    scheduler "^0.20.2"
 
 react-icons@^4.3.1:
   version "4.3.1"
@@ -3235,12 +3276,24 @@ react-query@^3.35.0:
     broadcast-channel "^3.4.1"
     match-sorter "^6.0.2"
 
-react@18.0.0:
-  version "18.0.0"
-  resolved "https://registry.npmjs.org/react/-/react-18.0.0.tgz"
-  integrity sha512-x+VL6wbT4JRVPm7EGxXhZ8w8LTROaxPXOqhlGyVSrv0sB1jkyFGgXxJ8LVoPRLvPR6/CIZGFmfzqUa2NYeMr2A==
+react-query@^4.0.0-beta.5:
+  version "4.0.0-beta.5"
+  resolved "https://registry.yarnpkg.com/react-query/-/react-query-4.0.0-beta.5.tgz#549856d39fd9ad2f6e62e2b9f9901ebaf5841e0b"
+  integrity sha512-Po18vTTK3mYnhwi8Uz4iTGxh7/CbNssH0enl/BSHUFaK5QCMMwYxkVInbRFS3Y4bcI62dxaro3GhOU9FtneEyA==
+  dependencies:
+    "@babel/runtime" "^7.5.5"
+    "@types/use-sync-external-store" "^0.0.3"
+    broadcast-channel "^3.4.1"
+    match-sorter "^6.0.2"
+    use-sync-external-store "^1.0.0"
+
+react@17.0.2:
+  version "17.0.2"
+  resolved "https://registry.yarnpkg.com/react/-/react-17.0.2.tgz#d0b5cc516d29eb3eee383f75b62864cfb6800037"
+  integrity sha512-gnhPt75i/dq/z3/6q/0asP78D0u592D5L1pd7M8P+dck6Fu/jJeL6iVVK23fptSUZj8Vjf++7wXA8UNclGQcbA==
   dependencies:
     loose-envify "^1.1.0"
+    object-assign "^4.1.1"
 
 readable-stream@^3.5.0, readable-stream@^3.6.0:
   version "3.6.0"
@@ -3371,12 +3424,13 @@ safe-json-utils@^1.1.1:
   resolved "https://registry.yarnpkg.com/safe-json-utils/-/safe-json-utils-1.1.1.tgz#0e883874467d95ab914c3f511096b89bfb3e63b1"
   integrity sha512-SAJWGKDs50tAbiDXLf89PDwt9XYkWyANFWVzn4dTXl5QyI8t2o/bW5/OJl3lvc2WVU4MEpTo9Yz5NVFNsp+OJQ==
 
-scheduler@^0.21.0:
-  version "0.21.0"
-  resolved "https://registry.npmjs.org/scheduler/-/scheduler-0.21.0.tgz"
-  integrity sha512-1r87x5fz9MXqswA2ERLo0EbOAU74DpIUO090gIasYTqlVoJeMcl+Z1Rg7WHz+qtPujhS/hGIt9kxZOYBV3faRQ==
+scheduler@^0.20.2:
+  version "0.20.2"
+  resolved "https://registry.yarnpkg.com/scheduler/-/scheduler-0.20.2.tgz#4baee39436e34aa93b4874bddcbf0fe8b8b50e91"
+  integrity sha512-2eWfGgAqqWFGqtdMmcL5zCMK1U8KlXv8SQFGglL3CEtd0aDVDWgeF/YoCmvln55m5zSk3J/20hTaSBeSObsQDQ==
   dependencies:
     loose-envify "^1.1.0"
+    object-assign "^4.1.1"
 
 scrypt-js@3.0.1, scrypt-js@^3.0.0:
   version "3.0.1"
@@ -3707,7 +3761,7 @@ uri-js@^4.2.2:
   dependencies:
     punycode "^2.1.0"
 
-use-sync-external-store@1.0.0:
+use-sync-external-store@1.0.0, use-sync-external-store@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/use-sync-external-store/-/use-sync-external-store-1.0.0.tgz#d98f4a9c2e73d0f958e7e2d2c2bfb5f618cbd8fd"
   integrity sha512-AFVsxg5GkFg8GDcxnl+Z0lMAz9rE8DGJCc28qnBuQF7lac57B5smLcT37aXpXIIPz75rW4g3eXHPjhHwdGskOw==
@@ -3722,42 +3776,16 @@ v8-compile-cache@^2.0.3:
   resolved "https://registry.npmjs.org/v8-compile-cache/-/v8-compile-cache-2.3.0.tgz"
   integrity sha512-l8lCEmLcLYZh4nbunNZvQCJc5pv7+RCwa8q/LdUx8u7lsWvPDKmpodJAJNwkAhJC//dFY48KuIEmjtd4RViDrA==
 
-wagmi-core@0.1.20:
-  version "0.1.20"
-  resolved "https://registry.yarnpkg.com/wagmi-core/-/wagmi-core-0.1.20.tgz#b4feaaf78a951a4af67e4d3e96410b3ee7a319d5"
-  integrity sha512-Q9BNtXXma64v8SMq84xk3W5ilGci0nnOIu1OF2w7T9MuGk2gShAqbVp38rJ2far5cMf3fCD46xcrdj5AuIk35g==
+wagmi@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/wagmi/-/wagmi-0.3.0.tgz#498ac4d4578508df5cdb67bb7983ec9da05e9e2d"
+  integrity sha512-C2ea8wNYCQ273wFT7aRrS7YPZqEsajLb88OeZNTDitScFdBcba8Cd8WYJANft2y/9T5+YDS3jlt1dtRzqx5xxw==
   dependencies:
-    "@ethersproject/providers" "^5.5.1"
-    eventemitter3 "^4.0.7"
-
-wagmi@^0.2.26:
-  version "0.2.26"
-  resolved "https://registry.yarnpkg.com/wagmi/-/wagmi-0.2.26.tgz#d884151e6444da78a395decec0ef1812cf56c6fc"
-  integrity sha512-tl9oXImDef6c932x55kh7WpZScuDFzpOd3GBPttn3NPINu+dueuntZuOErXPIc2hwrYP8Lm6U0r3XJqpR9qK1A==
-  dependencies:
-    "@ethersproject/providers" "^5.5.1"
+    "@coinbase/wallet-sdk" "^3.0.8"
+    "@wagmi/core" "0.2.0"
     "@walletconnect/ethereum-provider" "1.7.5"
-    wagmi-core "0.1.20"
-    walletlink "^2.5.0"
-
-walletlink@^2.5.0:
-  version "2.5.0"
-  resolved "https://registry.yarnpkg.com/walletlink/-/walletlink-2.5.0.tgz#b8db10f4d9f124084feb16d1e2b2d08ba8c20d21"
-  integrity sha512-PBJmK5tZmonwKPABBI2/optaZ11O4kKmkmnU5eLKhk4XRlal5qJ1igZ4U5j3w6w8wxxdhCWpLMHzGWt3n/p7mw==
-  dependencies:
-    "@metamask/safe-event-emitter" "2.0.0"
-    bind-decorator "^1.0.11"
-    bn.js "^5.1.1"
-    clsx "^1.1.0"
-    eth-block-tracker "4.4.3"
-    eth-json-rpc-filters "4.2.2"
-    eth-rpc-errors "4.0.2"
-    js-sha256 "0.9.0"
-    json-rpc-engine "6.1.0"
-    keccak "^3.0.1"
-    preact "^10.5.9"
-    rxjs "^6.6.3"
-    stream-browserify "^3.0.0"
+    react-query "^4.0.0-beta.5"
+    use-sync-external-store "^1.0.0"
 
 webidl-conversions@^3.0.0:
   version "3.0.1"

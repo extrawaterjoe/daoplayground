@@ -1,21 +1,26 @@
 import React from "react"
 import Link from "next/link"
-import { useAccount, useEnsLookup } from "wagmi"
+// import { useAccount, useEnsLookup } from "wagmi"
+import {
+  useAccount,
+  useEnsAvatar,
+  useEnsName,
+} from 'wagmi'
 
 const AccountDisplay = () => {
-  const [{ data, error, loading }, disconnect] = useAccount()
-  const [{ data: ensData, error: ensError, loading: ensLoading }, lookupAddress] = useEnsLookup({
-    address: data?.address,
-  })
+  const { data: account, isError, isLoading } = useAccount()
+  const { data: ensAvatar } = useEnsAvatar({ addressOrName: account?.address })
+  const { data: ensName } = useEnsName({ address: account?.address })
 
-  if (data?.address && !loading) {
+
+  if (account?.address && !isLoading) {
     return (
-      <Link href={`/${data?.address}`}>
+      <Link href={`/${account?.address}`}>
         <a>
           <div className="relative p-2 rounded-full border bg-slate-200 hover:bg-slate-100 dark:bg-slate-900 dark:hover:bg-slate-800">
-            {ensData
-              ? ensData
-              : data?.address.substring(0, 6) + "..." + data?.address.substring(data?.address.length - 4)}
+            {ensName
+              ? ensName
+              : account?.address.substring(0, 6) + "..." + account?.address.substring(account?.address.length - 4)}
           </div>
         </a>
       </Link>
